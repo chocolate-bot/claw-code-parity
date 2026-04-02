@@ -1810,7 +1810,7 @@ struct ProviderRuntimeClient {
 
 impl ProviderRuntimeClient {
     fn new(model: &str, allowed_tools: BTreeSet<String>) -> Result<Self, String> {
-        let model = resolve_model_alias(model).to_string();
+        let model = resolve_model_alias(model).clone();
         let client = ProviderClient::from_model(&model).map_err(|error| error.to_string())?;
         Ok(Self {
             runtime: tokio::runtime::Runtime::new().map_err(|error| error.to_string())?,
