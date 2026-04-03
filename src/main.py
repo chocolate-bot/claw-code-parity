@@ -16,6 +16,7 @@ from .session_store import load_session
 from .setup import run_setup
 from .tool_pool import assemble_tool_pool
 from .tools import execute_tool, get_tool, get_tools, render_tool_index
+from .theme_config import get_current_theme
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -28,6 +29,8 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.add_parser('command-graph', help='show command graph segmentation')
     subparsers.add_parser('tool-pool', help='show assembled tool pool with default settings')
     subparsers.add_parser('bootstrap-graph', help='show the mirrored bootstrap/runtime graph stages')
+    theme_parser = subparsers.add_parser('theme', help='show or set UI color theme')
+    theme_parser.add_argument('--name', type=str, default='light_yellow', help='theme name (light_yellow, original_claude, dark)')
     list_parser = subparsers.add_parser('subsystems', help='list the current Python modules in the workspace')
     list_parser.add_argument('--limit', type=int, default=32)
 
@@ -115,6 +118,14 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.command == 'bootstrap-graph':
         print(build_bootstrap_graph().as_markdown())
+        return 0
+    if args.command == 'theme':
+        theme = get_current_theme(args.name)
+        print(f'Current Theme: {args.name}')
+        print(f'Primary Color: {theme.primary_color} 🎨')
+        print(f'Background: {theme.bg_primary}')
+        print(f'Success: {theme.success}  Warning: {theme.warning}  Error: {theme.error}')
+        print(f'Tool Color: {theme.tool_color}  Agent Color: {theme.agent_color}')
         return 0
     if args.command == 'subsystems':
         for subsystem in manifest.top_level_modules[: args.limit]:
