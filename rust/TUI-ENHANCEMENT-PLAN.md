@@ -1,4 +1,4 @@
-# TUI Enhancement Plan — Cloud Code Orange (`rusty-claude-cli`)
+# TUI Enhancement Plan — claude-code-orange (`rusty-claude-cli`)
 
 ## Executive Summary
 

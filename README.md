@@ -1,4 +1,4 @@
-# Cloud Code Orange - A Rusty AI Coding Assistant
+# claude-code-orange - A Rusty AI Coding Assistant
 
 <p align="center">
   <strong>⭐ The fastest repo in history to surpass 50K stars, reaching the milestone in just 2 hours after publication ⭐</strong>
@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/clawd-hero.jpeg" alt="Cloud Code Orange" width="300" />
+  <img src="assets/clawd-hero.jpeg" alt="claude-code-orange" width="300" />
 </p>
 
 <p align="center">

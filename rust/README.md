@@ -1,6 +1,6 @@
-# 🦞 Cloud Code Orange — Rust Implementation
+# 🦞 claude-code-orange — Rust Implementation
 
-A high-performance Rust rewrite of the Cloud Code Orange CLI agent harness. Built for speed, safety, and native tool execution.
+A high-performance Rust rewrite of the claude-code-orange CLI agent harness. Built for speed, safety, and native tool execution.
 
 ## Quick Start
 
